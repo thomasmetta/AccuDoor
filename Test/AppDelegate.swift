@@ -41,19 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
             if let temp = response?.hours?[0] {
                 print(temp)
                 print("hi")
-                self.loadNotification()
+                var body = "YOLO SWAG"
+                self.loadNotification(body: body)
             }
         }
     }
     
-    func loadNotification() {
+    func loadNotification(body: String) {
         let notification = UILocalNotification()
-        notification.alertBody = "Body"
+        notification.alertBody = body
         notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         //        notification.fireDate = NSDate.
         notification.soundName = UILocalNotificationDefaultSoundName // play default sound
         notification.userInfo = ["title": "epifjs", "UUID": "asdf"] // assign a unique identifier to the notification so that we can retrieve it later
-        let date = Date(timeIntervalSinceNow: 5)
+        let date = Date(timeIntervalSinceNow: 0)
         notification.fireDate = date
         UIApplication.shared.scheduleLocalNotification(notification)
         
