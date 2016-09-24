@@ -17,7 +17,7 @@ class NetworkingManager {
     let baseURL = "http://apidev.accuweather.com/"
     let apiKey = "HackuWeather2016"
     //call another thing for the location
-    let location = "toronto"
+    let location = "55488"
     
     // MARK: Helper
     func urlWithPath(path: String) -> String {
@@ -28,7 +28,7 @@ class NetworkingManager {
         var hours: [HourResponse]?
         
         init(dailyWeatherResponseDictionary: AnyObject) {
-            if let hoursArray = dailyWeatherResponseDictionary as? NSArray {
+            if let hoursArray = dailyWeatherResponseDictionary as? [AnyObject] {
                 hours = []
                 for hour in hoursArray {
                     if let hourDictionary = hour as? [String: AnyObject] {
@@ -76,6 +76,9 @@ class NetworkingManager {
                 if let Link = hourDictionary["Link"] as? String {
                     self.Link = Link
                 }
+                if let tempDictionary = hourDictionary["Temperature"] as? [String: AnyObject] {
+                    self.temp = Temperature(temp: tempDictionary)
+                }
             }
             
             class Temperature {
@@ -98,7 +101,7 @@ class NetworkingManager {
     }
     
     func performWeatherRequest( completion: @escaping(_ weatherObject: DailyWeatherResponse?) -> Void) {
-        let urlString = self.urlWithPath(path: "locations/v1/ca/search?q=\(location)&apikey=\(apiKey)&language=en&details=true")
+        let urlString = self.urlWithPath(path: "forecasts/v1/hourly/24hour/\(location)?apikey=\(apiKey)&metric=true")
         
         if let url = URL(string: urlString) {
             Alamofire.request(url).responseJSON { (response) in
@@ -106,6 +109,6 @@ class NetworkingManager {
                 completion(weatherResponse)
             }
         }
-        completion(nil)
+//        completion(nil)
     }
 }

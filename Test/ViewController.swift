@@ -18,10 +18,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse) {
-            locationManager.requestWhenInUseAuthorization()
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways) {
+            locationManager.requestAlwaysAuthorization()
    
         }
+        
         locationManager.startRangingBeacons(in: region)
     }
 
@@ -31,7 +32,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func didPressButton2(_ sender: AnyObject) {
-        self.loadView2()
+        NetworkingManager.sharedInstance.performWeatherRequest { (response) in
+            if let temp = response?.hours?[0].temp?.Value {
+            }
+            
+            if let weatherIcon = response?.hours?[0].IconPhrase {
+                print(weatherIcon)
+            }
+        }
+//        self.loadView2()
     }
     
     func loadView1() {
@@ -63,7 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     } else {
                       nearProximity = false
                     }
-                    print(nearProximity)
+                
                 }
           
             }
