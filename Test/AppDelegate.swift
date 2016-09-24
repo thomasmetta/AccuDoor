@@ -6,6 +6,7 @@
 //  Copyright © 2016 TSL030. All rights reserved.
 //
 
+
 import UIKit
 
 
@@ -24,11 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         self.beaconManager?.requestAlwaysAuthorization()
         if let uuid = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D") {
-//            self.beaconManager?.startAdvertising(withProximityUUID: uuid, major: 28899, minor: 29792, identifier: "AppRegion")
             self.beaconManager?.startMonitoring(for: CLBeaconRegion(proximityUUID: uuid, major: 28899, minor: 29792, identifier: "AppRegion"))
         }
         
-        
+        // Notifications
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: UIUserNotificationType.alert, categories: nil))
+
         return true
     }
 
@@ -39,14 +41,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
             if let temp = response?.hours?[0] {
                 print(temp)
                 print("hi")
+                self.loadNotification()
             }
         }
+    }
+    
+    func loadNotification() {
+        let notification = UILocalNotification()
+        notification.alertBody = "Body"
+        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+        //        notification.fireDate = NSDate.
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.userInfo = ["title": "epifjs", "UUID": "asdf"] // assign a unique identifier to the notification so that we can retrieve it later
+        let date = Date(timeIntervalSinceNow: 5)
+        notification.fireDate = date
+        UIApplication.shared.scheduleLocalNotification(notification)
+        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
+    
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -64,7 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+  
+        
+   
 }
 

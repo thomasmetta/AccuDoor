@@ -18,6 +18,7 @@ class NotificationViewController: UIViewController {
         NetworkingManager.sharedInstance.performWeatherRequest { (weatherResponse) in
             //            print(response)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

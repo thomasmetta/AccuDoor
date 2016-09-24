@@ -27,7 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func didPressButton1(_ sender: AnyObject) {
-        self.loadView1()
+        self.loadNotification()
     }
     
     
@@ -41,6 +41,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
 //        self.loadView2()
+    }
+    
+    func loadNotification() {
+        let notification = UILocalNotification()
+        notification.alertBody = "Body"
+        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
+        //        notification.fireDate = NSDate.
+        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.userInfo = ["title": "epifjs", "UUID": "asdf"] // assign a unique identifier to the notification so that we can retrieve it later
+        let date = Date(timeIntervalSinceNow: 5)
+        notification.fireDate = date
+        UIApplication.shared.scheduleLocalNotification(notification)
+        
     }
     
     func loadView1() {
