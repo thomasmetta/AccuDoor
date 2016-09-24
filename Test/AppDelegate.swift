@@ -8,14 +8,27 @@
 
 import UIKit
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
+    var beaconManager: ESTBeaconManager?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.beaconManager = ESTBeaconManager()
+        self.beaconManager?.delegate = self
+        
+        self.beaconManager?.requestAlwaysAuthorization()
+//        self.beaconManager?.sta
+        
+        
+//        [self.beaconManager startMonitoringForRegion:[[ESTBeaconRegion alloc]
+//            initWithProximityUUID:ESTIMOTE_PROXIMITY_UUID
+//            identifier:@"AppRegion"]];
         return true
     }
 
