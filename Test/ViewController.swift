@@ -24,11 +24,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         locationManager.startRangingBeacons(in: region)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @IBAction func didPressButton1(_ sender: AnyObject) {
         self.loadView1()

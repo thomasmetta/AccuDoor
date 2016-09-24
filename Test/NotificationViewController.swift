@@ -15,7 +15,9 @@ class NotificationViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.blue
 
-        // Do any additional setup after loading the view.
+        NetworkingManager.sharedInstance.performWeatherRequest { (weatherResponse) in
+            //            print(response)
+        }
     }
 
     override func didReceiveMemoryWarning() {
