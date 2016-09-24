@@ -20,13 +20,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedAlways {
             locationManager.requestAlwaysAuthorization()
         }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func didPressButton1(_ sender: AnyObject) {
+        self.loadView1()
+    }
+    
+    
+    @IBAction func didPressButton2(_ sender: AnyObject) {
+        self.loadView2()
+    }
+    
+    func loadView1() {
+        let viewController = NotificationViewController()
+        
+        self.present(viewController, animated: false, completion: nil)
+    }
+    
+    func loadView2() {
+        
+        let viewController = ThomasViewController()
+        
+        self.present(viewController, animated: false, completion: nil)
+    }
 
 }
 
