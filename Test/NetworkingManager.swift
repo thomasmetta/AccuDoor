@@ -17,7 +17,8 @@ class NetworkingManager {
     let baseURL = "http://apidev.accuweather.com/"
     let apiKey = "HackuWeather2016"
     //call another thing for the location
-    let location = "55488"
+//    let location = "55488"  // Toronto 
+    let location = "334331" // Raining city
     
     // MARK: Helper
     func urlWithPath(path: String) -> String {

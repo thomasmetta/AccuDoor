@@ -38,12 +38,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     func beaconManager(_ manager: Any, didEnter region: CLBeaconRegion) {
         print("beaconManagerdidEnter")
         NetworkingManager.sharedInstance.performWeatherRequest { (response) in
-            if let temp = response?.hours?[0] {
-                print(temp)
-                print("hi")
-                var body = "YOLO SWAG"
-                self.loadNotification(body: body)
+//            if let weatherIcon = response?.hours?[0].IconPhrase {
+//                print(weatherIcon)
+//                print("hi")
+//                var body = "YOLO SWAG"
+//                self.loadNotification(body: body)
+//            }
+//            
+            var wearSunglasses: Bool = false
+            var bringUmbrella: Bool = false
+            var sunglassesString: String = ""
+            var umbrellaString: String = ""
+            
+            for i in 0...11 {
+                if((response?.hours?[i].IconPhrase) == "Mostly sunny" || (response?.hours?[i].IconPhrase) == "Sunny") {
+                    wearSunglasses = true
+                }
+                if((response?.hours?[i].PrecipitationProbability)! >= 50) {
+                    bringUmbrella = true
+                }
             }
+            if (wearSunglasses == true) {
+                sunglassesString = "Bring Sunglasses"
+            }
+            if (bringUmbrella == true) {
+                umbrellaString = "Bring Umbrella"
+            }
+            let body = sunglassesString + umbrellaString
+            print(body)
+
+            self.loadNotification(body: body)
         }
     }
     

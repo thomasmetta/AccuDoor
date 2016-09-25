@@ -30,15 +30,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.loadNotification()
     }
     
+   
     
     @IBAction func didPressButton2(_ sender: AnyObject) {
         NetworkingManager.sharedInstance.performWeatherRequest { (response) in
             if let temp = response?.hours?[0].temp?.Value {
             }
+            var wearSunglasses: Bool = false
+            var bringUmbrella: Bool = false
             
-            if let weatherIcon = response?.hours?[0].IconPhrase {
-                print(weatherIcon)
+            for i in 0...11 {
+                if((response?.hours?[i].IconPhrase) == "Mostly sunny" || (response?.hours?[i].IconPhrase) == "Sunny") {
+                    wearSunglasses = true
+                }
+                if((response?.hours?[i].PrecipitationProbability)! >= 50) {
+                    bringUmbrella = true
+                }
             }
+            print(wearSunglasses)
+            print(bringUmbrella)
+            
         }
 //        self.loadView2()
     }
