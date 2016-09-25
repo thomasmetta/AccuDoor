@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.0.0)
   - EstimoteSDK (4.8.1)
+  - PureLayout (3.0.2)
 
 DEPENDENCIES:
   - Alamofire
   - EstimoteSDK
+  - PureLayout
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   EstimoteSDK: 8ea0a0c6f7bee1286aad03b9bf38066e8839b6d9
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 121fc2eae6bbe0b009cf607454ab7221dd788a4f
+PODFILE CHECKSUM: 526e61a04911a5359e39032ff3d80753b0c786ed
 
 COCOAPODS: 1.0.1

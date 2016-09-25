@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-
+import AVFoundation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
@@ -27,7 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func didPressButton1(_ sender: AnyObject) {
-        self.loadNotification()
+        self.loadNotification(body: "Swag")
     }
     
    
@@ -54,16 +54,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //        self.loadView2()
     }
     
-    func loadNotification() {
+    func loadNotification(body: String) {
         let notification = UILocalNotification()
-        notification.alertBody = "Body"
+        notification.alertBody = body
         notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         //        notification.fireDate = NSDate.
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        //        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+//        notification.soundName = Bundle.main.path(forResource: "baa", ofType: "caf")
+//        notification.soundName = "res://baa"
+        notification.soundName = "Test/noise.caf"
         notification.userInfo = ["title": "epifjs", "UUID": "asdf"] // assign a unique identifier to the notification so that we can retrieve it later
         let date = Date(timeIntervalSinceNow: 5)
         notification.fireDate = date
+        notification.alertTitle = "Swankified app"
         UIApplication.shared.scheduleLocalNotification(notification)
+        
+        ///////////////////////////////
+//        notification.alertLaunchImage = "noise"
+        //        if let path = Bundle.main.path(forResource: "baa.caf", ofType: "caf") {
+//            var coinSound = URL(fileURLWithPath: path)
+//            
+//            
+//            do {
+//                let audioPlayer = try AVAudioPlayer(contentsOf: coinSound)
+//                audioPlayer.prepareToPlay()
+//                audioPlayer.play()
+//            } catch {
+//                print("HI")
+//            }
+//        }
+        
         
     }
     

@@ -5,4 +5,5 @@ use_frameworks!
 target 'Test' do
     pod 'EstimoteSDK'
     pod 'Alamofire'
+    pod 'PureLayout'
 end

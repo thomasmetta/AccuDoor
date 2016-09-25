@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         }
         
         // Notifications
-        application.registerUserNotificationSettings(UIUserNotificationSettings(types: UIUserNotificationType.alert, categories: nil))
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.sound], categories: nil))
 
         return true
     }
@@ -76,7 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         notification.alertBody = body
         notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         //        notification.fireDate = NSDate.
-        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+//        notification.soundName = UILocalNotificationDefaultSoundName // play default sound
+        notification.soundName = "noise"
         notification.userInfo = ["title": "epifjs", "UUID": "asdf"] // assign a unique identifier to the notification so that we can retrieve it later
         let date = Date(timeIntervalSinceNow: 0)
         notification.fireDate = date
