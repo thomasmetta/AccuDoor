@@ -1,2 +1,5 @@
 Test.xcworkspace/xcuserdata/**
 Test.xcworkspace/xcuserdata/
+Pods/Pods.xcodeproj/xcuserdata/**
+Pods/Pods.xcodeproj/xcuserdata/
+.DS_STORE

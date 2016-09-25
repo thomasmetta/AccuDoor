@@ -15,8 +15,6 @@
 		952EC06B1D96EA3E00022676 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952EC0691D96EA3E00022676 /* LaunchScreen.storyboard */; };
 		952EC0761D96EA3E00022676 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952EC0751D96EA3E00022676 /* TestTests.swift */; };
 		952EC0811D96EA3E00022676 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952EC0801D96EA3E00022676 /* TestUITests.swift */; };
-		F35AB6DF1D96EFB9001D88ED /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB6DE1D96EFB9001D88ED /* NotificationViewController.swift */; };
-		F35AB6E11D96F15C001D88ED /* ThomasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB6E01D96F15C001D88ED /* ThomasViewController.swift */; };
 		F35AB6E31D96FB14001D88ED /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB6E21D96FB14001D88ED /* NetworkingManager.swift */; };
 		F35AB6E51D97070A001D88ED /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB6E41D97070A001D88ED /* APIRequest.swift */; };
 /* End PBXBuildFile section */
@@ -55,8 +53,6 @@
 		952EC07C1D96EA3E00022676 /* TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		952EC0801D96EA3E00022676 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		952EC0821D96EA3E00022676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F35AB6DE1D96EFB9001D88ED /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		F35AB6E01D96F15C001D88ED /* ThomasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThomasViewController.swift; sourceTree = "<group>"; };
 		F35AB6E21D96FB14001D88ED /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		F35AB6E41D97070A001D88ED /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		F35AB6E71D972002001D88ED /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 			children = (
 				952EC0601D96EA3E00022676 /* AppDelegate.swift */,
 				952EC0621D96EA3E00022676 /* ViewController.swift */,
-				F35AB6E01D96F15C001D88ED /* ThomasViewController.swift */,
-				F35AB6DE1D96EFB9001D88ED /* NotificationViewController.swift */,
 				952EC0641D96EA3E00022676 /* Main.storyboard */,
 				952EC0671D96EA3E00022676 /* Assets.xcassets */,
 				952EC0691D96EA3E00022676 /* LaunchScreen.storyboard */,
@@ -352,12 +346,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35AB6E11D96F15C001D88ED /* ThomasViewController.swift in Sources */,
 				952EC0631D96EA3E00022676 /* ViewController.swift in Sources */,
 				952EC0611D96EA3E00022676 /* AppDelegate.swift in Sources */,
 				F35AB6E31D96FB14001D88ED /* NetworkingManager.swift in Sources */,
 				F35AB6E51D97070A001D88ED /* APIRequest.swift in Sources */,
-				F35AB6DF1D96EFB9001D88ED /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

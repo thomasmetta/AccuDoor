@@ -51,7 +51,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print(bringUmbrella)
             
         }
-//        self.loadView2()
     }
     
     func loadNotification() {
@@ -64,20 +63,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let date = Date(timeIntervalSinceNow: 5)
         notification.fireDate = date
         UIApplication.shared.scheduleLocalNotification(notification)
-        
-    }
-    
-    func loadView1() {
-        let viewController = NotificationViewController()
-        
-        self.present(viewController, animated: false, completion: nil)
-    }
-    
-    func loadView2() {
-        
-        let viewController = ThomasViewController()
-        
-        self.present(viewController, animated: false, completion: nil)
     }
 
     var firstProximity: Int = 0
