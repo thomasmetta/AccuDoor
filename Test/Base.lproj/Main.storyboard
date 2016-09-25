@@ -18,28 +18,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FJ-TQ-mkM">
-                                <frame key="frameInset" minX="167" minY="165" width="52" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thunderstorm" translatesAutoresizingMaskIntoConstraints="NO" id="eYf-JR-yrw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="hpe-I9-Gm4"/>
+                                    <constraint firstAttribute="width" constant="139" id="kVI-MU-Nab"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyu-EM-1TE">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thunderstorms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-x1-8hx">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.99994784593582153" green="1" blue="0.9998740553855896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toronto, ON Canada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ez-0e-07U">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="G2O-Eq-Qcg"/>
+                                    <constraint firstAttribute="width" constant="100" id="kMB-ih-yHS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.58431372549019611" green="0.61960784313725492" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-em-AX9">
+                                <frame key="frameInset" minX="99" minY="528" width="193" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button1"/>
-                                <connections>
-                                    <action selector="didPressButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5UQ-E0-8aY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kE-kU-IJq">
-                                <frame key="frameInset" minX="173" minY="334" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="didPressButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9E-3f-ovb"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="Pap-vL-Y96">
+                                        <frame key="frameInset" minX="159" minY="11" width="15" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RAIN WARNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxd-8h-I6e">
+                                        <frame key="frameInset" minX="31" minY="9" width="120" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.99994784589999997" green="1" blue="0.99987405539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14533349871635437" green="0.20756801962852478" blue="0.33707451820373535" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="birds" translatesAutoresizingMaskIntoConstraints="NO" id="hy5-jF-Wcm">
+                                <frame key="frameInset" minX="255" minY="85" width="55" height="31"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cloud1" translatesAutoresizingMaskIntoConstraints="NO" id="nNp-Ve-aeq">
+                                <frame key="frameInset" minY="85" width="82" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cloud3" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-KL-7AV">
+                                <frame key="frameInset" minY="225" width="99" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="birds" translatesAutoresizingMaskIntoConstraints="NO" id="41l-wq-hhM">
+                                <frame key="frameInset" minX="56" minY="234" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="cloud2" translatesAutoresizingMaskIntoConstraints="NO" id="lTk-Yg-Jcf">
+                                <frame key="frameInset" minX="293" minY="155" width="82" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.16862745098039217" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CxZ-x1-8hx" firstAttribute="top" secondItem="cyu-EM-1TE" secondAttribute="bottom" constant="25" id="7n2-uc-PM0"/>
+                            <constraint firstItem="CxZ-x1-8hx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8BF-sJ-0IK"/>
+                            <constraint firstItem="9Ez-0e-07U" firstAttribute="top" secondItem="CxZ-x1-8hx" secondAttribute="bottom" constant="8" id="ICO-8F-qkL"/>
+                            <constraint firstItem="eYf-JR-yrw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSZ-UA-GVt"/>
+                            <constraint firstItem="cyu-EM-1TE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="5" id="aFa-x0-CyE"/>
+                            <constraint firstItem="cyu-EM-1TE" firstAttribute="top" secondItem="eYf-JR-yrw" secondAttribute="bottom" constant="30" id="fdd-dt-6hz"/>
+                            <constraint firstItem="cyu-EM-1TE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qfj-6W-7bn"/>
+                            <constraint firstItem="9Ez-0e-07U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xJ5-c5-2YW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bird0" destination="41l-wq-hhM" id="b1h-Kg-I3Q"/>
+                        <outlet property="birdIsTheWord" destination="hy5-jF-Wcm" id="5Zm-85-gsd"/>
+                        <outlet property="cloud1" destination="nNp-Ve-aeq" id="iq8-Fm-XL3"/>
+                        <outlet property="cloud2" destination="IgA-KL-7AV" id="CVj-1v-MLa"/>
+                        <outlet property="cloud4" destination="lTk-Yg-Jcf" id="27F-be-TGr"/>
+                        <outlet property="conditionsLabel" destination="CxZ-x1-8hx" id="pWE-7g-v5e"/>
+                        <outlet property="locationLabel" destination="9Ez-0e-07U" id="2QT-Tw-U3P"/>
+                        <outlet property="temperatureLabel" destination="cyu-EM-1TE" id="ini-Jf-DWo"/>
+                        <outlet property="warningIcon" destination="Pap-vL-Y96" id="mBy-N2-f53"/>
+                        <outlet property="warningLabel" destination="Vxd-8h-I6e" id="QYV-bG-A2J"/>
+                        <outlet property="warningView" destination="1a7-em-AX9" id="Zcr-ts-kbM"/>
+                        <outlet property="weatherIcon" destination="eYf-JR-yrw" id="1SN-fd-y0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="birds" width="55" height="31"/>
+        <image name="cloud1" width="82" height="66"/>
+        <image name="cloud2" width="82" height="51"/>
+        <image name="cloud3" width="99" height="54"/>
+        <image name="thunderstorm" width="139" height="127"/>
+        <image name="umbrella" width="15" height="16"/>
+    </resources>
 </document>
